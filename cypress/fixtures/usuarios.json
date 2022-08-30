@@ -1,0 +1,15 @@
+[
+    {
+        "email" : "everton@oneemask.com",
+        "senha" : "Senha1234"
+    },
+    {
+        "email" : "everton@oneemask.com",
+        "senha" : "Senha12345"
+    },
+    {
+        "email" : "everton@oneemask.com",
+        "senha" : "Senha12345",
+        "perfil" : "admin"
+    }
+]
