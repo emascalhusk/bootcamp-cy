@@ -3,9 +3,9 @@ import usuarios from "../../fixtures/usuarios.json"
 
 describe('US0001 - Funcionalidade: Login', () => {
 
-    beforeEach(() => {
-        cy.visit('login')
-    });
+    //beforeEach(() => {
+    //    cy.visit('login')
+    //});
 
     it('Deve fazer login com sucesso', () => {
         cy.login('everton@oneemask.com', 'Senha1234')
@@ -26,6 +26,7 @@ describe('US0001 - Funcionalidade: Login', () => {
     });
 
     it.only('Deve fazer login com sucesso - Usando fixture', () => {
+
         //cy.login(usuarios[0].email, usuarios[0].senha)
         cy.fixture("usuarios").then((user) => {
             cy.login(user[0].email, user[1].senha)
