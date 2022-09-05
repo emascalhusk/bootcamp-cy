@@ -20,9 +20,9 @@ describe('Funcionalidade: Adicionar esperiencia', () => {
         cy.get('[data-test="experience-delete"]').should('exist')
     });
 
-    it('Deve Excluir uma experiencia com sucesso', () => {
+    it.only('Deve Excluir uma experiencia com sucesso', () => {
         experienciaPage.addExperiencia('QA', 'Via', 'SP', '01/01/2020', '31/12/2021', 'ViaHub Tec')
         cy.get('[data-test="experience-delete"]').first().click()
-        cy.contains('Experiência Adicionada').should('be.visible')
+        cy.contains('Experiência Removida').should('be.visible')
     });
 });
