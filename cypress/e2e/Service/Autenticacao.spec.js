@@ -16,7 +16,7 @@ it('[POST] - Teste de autenticação', () => {
     })
 });
 
-it.only('[POST] - Teste de autenticação com usuario invalido', () => {
+it('[POST] - Teste de autenticação com usuario invalido', () => {
     cy.request({
         method: 'POST',
         url: '/api/auth',

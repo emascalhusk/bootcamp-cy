@@ -45,7 +45,7 @@ describe('US0003 - Funcionalidade: Criar Perfil', () => {
         cy.get('.MuiFormHelperText-root').should('contain', 'obrigatório')
     });
 
-    it.only('Validar dados inválidos', () => {
+    it('Validar dados inválidos', () => {
         cy.get('[data-test="profile-webSite"] > .MuiInputBase-root > .MuiInputBase-input').type(faker.internet.userName())
         cy.get('[data-test="profile-socials"]').click().click()
         cy.get('[data-test="profile-twitter"] > .MuiInputBase-root > .MuiInputBase-input').type(faker.internet.userName())

@@ -13,7 +13,7 @@ describe('US0001 - Funcionalidade: Login', () => {
         cy.get('[data-test="alert"]').should('contain', 'Credenciais inválidas')
     });
 
-    it.only('Deve fazer login com sucesso - Usando importação', () => {
+    it('Deve fazer login com sucesso - Usando importação', () => {
         cy.login(usuarios[0].email, usuarios[0].senha)
         cy.get('[data-test="dashboard-welcome"]').should('contain', 'Bem-vindo')
     });
