@@ -26,6 +26,8 @@
 
 /// <reference types="Cypress" />
 
+import auth from '../fixtures/auth.json'
+
 Cypress.Commands.add('navigate', (route) => {
     cy.intercept(route).as('loadpage')
     cy.visit(route, { timeout: 30000 })
@@ -39,4 +41,27 @@ Cypress.Commands.add("login", (email, senha) => {
     cy.get('[data-test="login-password"] > .MuiInputBase-root > .MuiInputBase-input').type(senha)
     cy.get('[data-test="login-submit"]').click()
     cy.wait(500)
+ })
+
+Cypress.Commands.add("tokenJwt", () => {
+    cy.request({
+        method: 'POST',
+        url: '/api/auth',
+        body: auth
+    }).then((response) => {
+        return response.body.jwt
+    })
+ })
+
+ Cypress.Commands.add("criarPostagem", (token, value) => {
+    cy.request({
+        method: 'POST',
+        url: '/api/posts',
+        headers: {
+            Cookie: token
+        },
+        body: {
+            text: value
+        }
+    })
  })
